@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mt-4">Loan Approval Prediction</h2>
+
+        <form id="loanForm" class="p-4 border rounded shadow bg-light">
+            <div class="mb-3">
+                <label class="form-label">Gender (Male=1, Female=0):</label>
+                <input type="number" name="Gender" class="form-control" placeholder="Enter 1 for Male, 0 for Female" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Married (Yes=1, No=0):</label>
+                <input type="number" name="Married" class="form-control" placeholder="Enter 1 for Yes, 0 for No" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Dependents (Enter a number, e.g., 0, 1, 2):</label>
+                <input type="number" name="Dependents" class="form-control" placeholder="Enter number of dependents" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Education (Graduate=1, Not Graduate=0):</label>
+                <input type="number" name="Education" class="form-control" placeholder="Enter 1 for Graduate, 0 for Not Graduate" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Credit Card Debt (Enter amount in numbers):</label>
+                <input type="number" name="Credit_Card_Debt" class="form-control" placeholder="Enter Credit Card Debt" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Employment Type (Salaried=0, Self-Employed=1, Unemployed=2):</label>
+                <input type="number" name="Employment_Type" class="form-control" placeholder="Enter 0 for Salaried, 1 for Self-Employed, 2 for Unemployed" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary w-100">Check Loan Approval</button>
+        </form>
+
+        <div id="result" class="alert mt-4 d-none"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
